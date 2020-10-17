@@ -1,0 +1,17 @@
+{% extends 'blog/main.html' %}
+
+{% block main %}
+
+    {% for detail in details %}
+        <div class="detail" style="background-color: {{ detail.color}}">
+            <h2>{{ detail.title }}</h2>
+            <span style="font-size: 30px">{{ detail.telephone_number }} {{ detail.additional_number }}</span>
+            <p style="font-size: 30px">{{ detail.email }}</p>
+            <p style="font-size: 30px">{{ detail.name }} {{ detail.surname }}</p>
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
+</body>
+</html>

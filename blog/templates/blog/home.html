@@ -1,0 +1,52 @@
+{% extends 'blog/main.html' %}
+{% load static %}
+        <!--////////////////////////////////////Container-->
+		{% block content %}
+            
+			<div class="wrap-container">
+	
+				<!-----------------content-box-3-------------------->
+		
+				<!-----------------content-box-4-------------------->
+				<section class="content-box box-style-1 box-4">
+					<div class="zerogrid" style="width: 100%">
+                        <div class="wrap-box"><!--Start Box-->
+                            {% for post in posts %}
+                                <div class="row">
+                                    <article>
+                                        <div class="col-1-2" style='text-align: center;'>
+                                        <img src="{{ post.image.url }}" alt="">
+                                        </div>
+                                        <div class="col-1-2">
+                                            <div class="entry-content t-center">
+												<h3>{{ post.title }}</h3>
+												<span>{{ post.date }}</span>
+                                                <p>{{ post.author }}</p>
+                                                <center><a class="button " href="{% url 'single-page' post.id %}">Читать далее</a></center>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            {% endfor %}
+							<div class="row">
+								<article>
+									<div class="col-1-2 f-right">
+										<img src="{% static 'blog/images/slide2.jpg' %}" alt="">
+									</div>
+									<div class="col-1-2">
+										<div class="entry-content t-center">
+											<h3>The title on the article</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia.</p>
+											<a class="button" href="{% static 'blog/single.html' %}">Read More</a>
+										</div>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</section>
+            </div>
+            
+        {% endblock %}
+		<!--////////////////////////////////////Footer-->
+		
